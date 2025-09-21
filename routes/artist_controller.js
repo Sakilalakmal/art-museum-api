@@ -44,5 +44,49 @@ artistRouter.get('/genre/:genre',async(req,res)=>{
 
 });
 
+artistRouter.get("/medium/:medium", async(req,res)=>{
+  try {
+
+    const {medium} = req.params;
+
+    const paintings = await ArtLab.find({medium:medium});
+
+    if(paintings.length === 0 ){
+      res.status(400).json({
+        message:"for this genre there aren't any paintings paintings add will soon..."
+      })
+    }
+
+    res.status(201).json(paintings);
+    
+  } catch (error) {
+    res.status(400).json({
+      message:error.message,
+    })
+  }
+});
+
+//fetching all genre we have
+// Fetch all unique genres
+artistRouter.get('/genres', async (req, res) => {
+  try {
+    const genres = await ArtLab.distinct('genre'); // Get all unique genres
+    res.status(200).json(genres);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
+
+//fetching all unique meduim
+artistRouter.get('/mediums' , async(req,res)=>{
+  try {
+    const medium = await ArtLab.distinct('medium');
+    res.status(200).json(medium);
+  } catch (error) {
+    res.status(400).json({message:error.message});
+  }
+});
+
+
 
 module.exports = artistRouter;

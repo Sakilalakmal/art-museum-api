@@ -9,66 +9,67 @@
         theme: {
           extend: {
             colors: {
-              'primary': {
-                50: '#f0f4ff',
-                100: '#e0e9ff',
-                200: '#c7d7fe',
-                300: '#a4bcfc',
-                400: '#7b99f9',
-                500: '#5a72f5',
-                600: '#3b4feb',
-                700: '#2c3ad8',
-                800: '#2731ae',
-                900: '#253088',
+              primary: {
+                50: "#f0f4ff",
+                100: "#e0e9ff",
+                200: "#c7d7fe",
+                300: "#a4bcfc",
+                400: "#7b99f9",
+                500: "#5a72f5",
+                600: "#3b4feb",
+                700: "#2c3ad8",
+                800: "#2731ae",
+                900: "#253088",
               },
             },
             animation: {
-              'float': 'float 3s ease-in-out infinite',
-              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-              'fade-in': 'fadeIn 0.5s ease-out forwards',
-              'slide-up': 'slideUp 0.5s ease-out forwards',
+              float: "float 3s ease-in-out infinite",
+              "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+              "fade-in": "fadeIn 0.5s ease-out forwards",
+              "slide-up": "slideUp 0.5s ease-out forwards",
             },
             keyframes: {
               float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-10px)' }
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-10px)" },
               },
               fadeIn: {
-                '0%': { opacity: '0' },
-                '100%': { opacity: '1' }
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
               },
               slideUp: {
-                '0%': { transform: 'translateY(20px)', opacity: '0' },
-                '100%': { transform: 'translateY(0)', opacity: '1' }
-              }
+                "0%": { transform: "translateY(20px)", opacity: "0" },
+                "100%": { transform: "translateY(0)", opacity: "1" },
+              },
             },
             backgroundImage: {
-              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-              'dotted-pattern': 'radial-gradient(circle, #e2e8f0 1px, transparent 1px)'
-            }
-          }
-        }
-      }
+              "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+              "dotted-pattern":
+                "radial-gradient(circle, #e2e8f0 1px, transparent 1px)",
+            },
+          },
+        },
+      };
     </script>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
-      
+      @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
+
       * {
-        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-family: "Plus Jakarta Sans", sans-serif;
       }
 
       .card-hover-effect {
         transition: all 0.3s ease;
       }
-      
+
       .card-hover-effect:hover {
         transform: translateY(-8px);
       }
-      
+
       .image-hover-effect {
         transition: transform 0.5s ease;
       }
-      
+
       .card-hover-effect:hover .image-hover-effect {
         transform: scale(1.05);
       }
@@ -90,7 +91,7 @@
       ::-webkit-scrollbar-thumb:hover {
         background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
       }
-      
+
       /* Line clamp for description */
       .line-clamp-3 {
         overflow: hidden;
@@ -98,49 +99,146 @@
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 3;
       }
-      
+
       .bg-dotted-pattern {
         background-size: 20px 20px;
       }
     </style>
   </head>
-  <body class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 text-slate-800 antialiased relative">
+  <body
+    class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 text-slate-800 antialiased relative"
+  >
     <!-- Decorative background elements -->
-    <div class="fixed inset-0 z-0 bg-dotted-pattern opacity-40 pointer-events-none"></div>
-    <div class="fixed top-32 -left-32 w-64 h-64 bg-primary-200/30 rounded-full filter blur-3xl opacity-30 animate-float pointer-events-none"></div>
-    <div class="fixed bottom-32 -right-32 w-80 h-80 bg-purple-200/30 rounded-full filter blur-3xl opacity-30 animate-float delay-1000 pointer-events-none"></div>
-    
+    <div
+      class="fixed inset-0 z-0 bg-dotted-pattern opacity-40 pointer-events-none"
+    ></div>
+    <div
+      class="fixed top-32 -left-32 w-64 h-64 bg-primary-200/30 rounded-full filter blur-3xl opacity-30 animate-float pointer-events-none"
+    ></div>
+    <div
+      class="fixed bottom-32 -right-32 w-80 h-80 bg-purple-200/30 rounded-full filter blur-3xl opacity-30 animate-float delay-1000 pointer-events-none"
+    ></div>
+
     <!-- Add Artwork Button -->
-    <a href="/api/artworks" class="fixed top-6 right-6 z-50 bg-white group flex items-center gap-3 shadow-lg hover:shadow-xl px-6 py-3 rounded-full transition-all duration-300 transform hover:-translate-y-1">
-      <span class="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-primary-500 to-purple-600 text-white text-lg group-hover:scale-110 transition-transform duration-300">✨</span>
-      <span class="font-semibold text-slate-800 group-hover:text-primary-600 transition-colors duration-300">Add Artwork</span>
+    <a
+      href="/api/artworks"
+      class="fixed top-6 right-6 z-50 bg-white group flex items-center gap-3 shadow-lg hover:shadow-xl px-6 py-3 rounded-full transition-all duration-300 transform hover:-translate-y-1"
+    >
+      <span
+        class="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-primary-500 to-purple-600 text-white text-lg group-hover:scale-110 transition-transform duration-300"
+        >✨</span
+      >
+      <span
+        class="font-semibold text-slate-800 group-hover:text-primary-600 transition-colors duration-300"
+        >Add Artwork</span
+      >
     </a>
-    
+
     <!-- Header -->
     <div class="max-w-7xl mx-auto px-6 pt-24 pb-12 relative z-10">
       <div class="text-center mb-12">
-        <h1 class="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600 inline-block mb-4">Art Gallery</h1>
-        <p class="text-xl text-slate-600 max-w-2xl mx-auto">Discover our curated collection of masterpieces</p>
+        <h1
+          class="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600 inline-block mb-4"
+        >
+          Art Gallery
+        </h1>
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+          Discover our curated collection of masterpieces
+        </p>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="mb-8">
+        <label
+          class="block text-sm font-semibold text-slate-700 mb-3"
+          for="artistSearch"
+        >
+          Search Artists
+        </label>
+        <div class="relative group">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-purple-500/10 rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          ></div>
+          <div class="relative">
+            <input
+              id="artistSearch"
+              type="text"
+              placeholder="Type artist name..."
+              autocomplete="off"
+              class="w-full py-4 pl-12 pr-4 rounded-2xl border border-slate-200 bg-white/80 backdrop-blur-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all duration-300 shadow-sm hover:shadow-md"
+              aria-label="Search for artists"
+            />
+            <div
+              class="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <ul
+          id="suggestions"
+          class="hidden absolute z-50 w-72 bg-white rounded-2xl mt-2 shadow-2xl border border-slate-100 max-h-64 overflow-y-auto suggestions-enter"
+        ></ul>
       </div>
 
       <!-- Filter Section -->
       <div class="flex flex-col md:flex-row gap-6 mb-10">
         <!-- Genre Filter -->
-        <div class="w-full md:w-64 bg-white p-6 rounded-2xl shadow-md border border-slate-200/50">
-          <h2 class="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-500" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
+        <div
+          class="w-full md:w-64 bg-white p-6 rounded-2xl shadow-md border border-slate-200/50"
+        >
+          <h2
+            class="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-primary-500"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"
+                clip-rule="evenodd"
+              />
             </svg>
             Filter by Genre
           </h2>
           <div class="relative">
-            <select id="genreDropdown" class="w-full py-3 px-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-200 focus:border-primary-500 appearance-none text-slate-700 transition-all duration-200">
+            <select
+              id="genreDropdown"
+              class="w-full py-3 px-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-200 focus:border-primary-500 appearance-none text-slate-700 transition-all duration-200"
+            >
               <option value="">All Genres</option>
               <!-- Genres will be dynamically populated here -->
             </select>
-            <div class="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-slate-400">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+            <div
+              class="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-slate-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
               </svg>
             </div>
           </div>
@@ -148,269 +246,398 @@
       </div>
 
       <!-- Medium Filter -->
-<div class="w-full md:w-64 bg-white p-6 rounded-2xl shadow-md border border-slate-200/50">
-  <h2 class="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2">
-    <!-- Medium Icon SVG Here -->
-    Filter by Medium
-  </h2>
-  <div class="relative">
-    <select id="mediumDropdown" class="w-full py-3 px-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-200 focus:border-primary-500 appearance-none text-slate-700 transition-all duration-200">
-      <option value="">All Mediums</option>
-      <!-- Mediums will be dynamically populated here -->
-    </select>
-    <div class="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-slate-400">
-      <!-- SVG Icon (optional) -->
-    </div>
-  </div>
-</div>
-
+      <div
+        class="w-full md:w-64 bg-white p-6 rounded-2xl shadow-md border border-slate-200/50"
+      >
+        <h2
+          class="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2"
+        >
+          <!-- Medium Icon SVG Here -->
+          Filter by Medium
+        </h2>
+        <div class="relative">
+          <select
+            id="mediumDropdown"
+            class="w-full py-3 px-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-200 focus:border-primary-500 appearance-none text-slate-700 transition-all duration-200"
+          >
+            <option value="">All Mediums</option>
+            <!-- Mediums will be dynamically populated here -->
+          </select>
+          <div
+            class="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-slate-400"
+          >
+            <!-- SVG Icon (optional) -->
+          </div>
+        </div>
+      </div>
 
       <!-- Gallery -->
       <div class="max-w-7xl mx-auto">
-        <div id="paintingsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          id="paintingsContainer"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           <% if (paintings.length === 0) { %>
-          <div class="col-span-full py-24 flex flex-col items-center justify-center">
-            <div class="w-32 h-32 flex items-center justify-center rounded-full bg-slate-100 text-5xl mb-6 animate-pulse-slow">🎨</div>
-            <h2 class="text-2xl font-bold text-slate-700 mb-3">No Paintings Found</h2>
-            <p class="text-slate-500 text-lg max-w-md text-center">Start building your collection by adding your first artwork!</p>
+          <div
+            class="col-span-full py-24 flex flex-col items-center justify-center"
+          >
+            <div
+              class="w-32 h-32 flex items-center justify-center rounded-full bg-slate-100 text-5xl mb-6 animate-pulse-slow"
+            >
+              🎨
+            </div>
+            <h2 class="text-2xl font-bold text-slate-700 mb-3">
+              No Paintings Found
+            </h2>
+            <p class="text-slate-500 text-lg max-w-md text-center">
+              Start building your collection by adding your first artwork!
+            </p>
           </div>
-          <% } else { %>
-            <% paintings.forEach(function(painting, index) { %>
-            <div class="card-hover-effect bg-white rounded-3xl shadow-md hover:shadow-xl overflow-hidden border border-slate-200/50 animate-slide-up" >
-              <div class="relative overflow-hidden h-72 bg-slate-100">
-                <img
-                  src="<%= painting.imageUrl %>"
-                  class="image-hover-effect w-full h-full object-cover"
-                  alt="<%= painting.title %>"
-                  loading="lazy"
-                />
-                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 shadow-lg">
-                  <%= painting.catalogNumber || 'Uncatalogued' %>
-                </div>
-                
-                <% if (painting.isOnDisplay == 'true' || painting.isOnDisplay === true) { %>
-                <div class="absolute top-4 left-4 bg-emerald-500/90 backdrop-blur-sm rounded-xl px-3 py-2 text-xs font-semibold text-white shadow-lg flex items-center gap-2">
-                  <span class="w-2 h-2 bg-white rounded-full"></span>
-                  On Display
-                </div>
-                <% } else { %>
-                <div class="absolute top-4 left-4 bg-slate-700/90 backdrop-blur-sm rounded-xl px-3 py-2 text-xs font-semibold text-white shadow-lg flex items-center gap-2">
-                  <span class="w-2 h-2 bg-red-400 rounded-full"></span>
-                  In Storage
-                </div>
-                <% } %>
+          <% } else { %> <% paintings.forEach(function(painting, index) { %>
+          <div
+            class="card-hover-effect bg-white rounded-3xl shadow-md hover:shadow-xl overflow-hidden border border-slate-200/50 animate-slide-up"
+          >
+            <div class="relative overflow-hidden h-72 bg-slate-100">
+              <img
+                src="<%= painting.imageUrl %>"
+                class="image-hover-effect w-full h-full object-cover"
+                alt="<%= painting.title %>"
+                loading="lazy"
+              />
+              <div
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 shadow-lg"
+              >
+                <%= painting.catalogNumber || 'Uncatalogued' %>
               </div>
-              
 
-              <div class="p-6">
-                <div class="mb-2">
-                  <a href="/api/artworks/artist/<%= encodeURIComponent(painting.artist) %>" class="inline-block text-sm font-medium text-primary-600 hover:text-primary-700 bg-primary-50 hover:bg-primary-100 px-3 py-1 rounded-full transition-colors mb-2">
-                    <%= painting.artist %>
-                  </a>
-                </div>
-                
-                <h2 class="text-xl font-bold text-slate-800 mb-2 line-clamp-2">
-                  <%= painting.title %>
-                  <% if (painting.year) { %>
-                  <span class="ml-2 text-sm font-normal text-slate-500">(<%= painting.year %>)</span>
-                  <% } %>
-                </h2>
-                
-                <!-- Details -->
-                <div class="grid grid-cols-2 gap-y-3 gap-x-6 mt-6 mb-6 pb-6 border-b border-slate-100">
-                  <div>
-                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Genre</p>
-                    <p class="text-sm font-medium text-slate-700"><%= painting.genre %></p>
-                  </div>
-                  
+              <% if (painting.isOnDisplay == 'true' || painting.isOnDisplay ===
+              true) { %>
+              <div
+                class="absolute top-4 left-4 bg-emerald-500/90 backdrop-blur-sm rounded-xl px-3 py-2 text-xs font-semibold text-white shadow-lg flex items-center gap-2"
+              >
+                <span class="w-2 h-2 bg-white rounded-full"></span>
+                On Display
+              </div>
+              <% } else { %>
+              <div
+                class="absolute top-4 left-4 bg-slate-700/90 backdrop-blur-sm rounded-xl px-3 py-2 text-xs font-semibold text-white shadow-lg flex items-center gap-2"
+              >
+                <span class="w-2 h-2 bg-red-400 rounded-full"></span>
+                In Storage
+              </div>
+              <% } %>
+            </div>
 
-                  <div>
-                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Medium</p>
-                    <p class="text-sm font-medium text-slate-700"><%= painting.medium %></p>
-                  </div>
-                  
-                  <% if (painting.dimensions) { %>
-                  <div>
-                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Dimensions</p>
-                    <p class="text-sm font-medium text-slate-700"><%= painting.dimensions %></p>
-                  </div>
-                  <% } %>
-                  
-                  <% if (painting.location) { %>
-                  <div>
-                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Location</p>
-                    <p class="text-sm font-medium text-slate-700"><%= painting.location %></p>
-                  </div>
-                  <% } %>
-                  
-                  <% if (painting.provenance) { %>
-                  <div>
-                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Provenance</p>
-                    <p class="text-sm font-medium text-slate-700"><%= painting.provenance %></p>
-                  </div>
-                  <% } %>
-                </div>
+            <div class="p-6">
+              <div class="mb-2">
+                <a
+                  href="/api/artworks/artist/<%= encodeURIComponent(painting.artist) %>"
+                  class="inline-block text-sm font-medium text-primary-600 hover:text-primary-700 bg-primary-50 hover:bg-primary-100 px-3 py-1 rounded-full transition-colors mb-2"
+                >
+                  <%= painting.artist %>
+                </a>
+              </div>
 
-                <% if (painting.price) { %>
-                <div class="bg-gradient-to-r from-slate-50 to-slate-100 rounded-2xl p-4 mb-6 border border-slate-200/50 relative overflow-hidden">
-                  <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/5 to-emerald-500/10 rounded-2xl"></div>
-                  <div class="relative">
-                    <div class="text-2xl font-bold text-emerald-600 mb-1">
-                      <%= painting.price %> <%= painting.priceCurrency || '' %>
-                    </div>
-                    <div class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Market Value</div>
-                  </div>
-                </div>
+              <h2 class="text-xl font-bold text-slate-800 mb-2 line-clamp-2">
+                <%= painting.title %> <% if (painting.year) { %>
+                <span class="ml-2 text-sm font-normal text-slate-500"
+                  >(<%= painting.year %>)</span
+                >
                 <% } %>
+              </h2>
 
-                <% if (painting.description) { %>
-                <div class="mb-6">
-                  <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Description</p>
-                  <p class="text-sm text-slate-600 line-clamp-3">
-                    <%= painting.description %>
+              <!-- Details -->
+              <div
+                class="grid grid-cols-2 gap-y-3 gap-x-6 mt-6 mb-6 pb-6 border-b border-slate-100"
+              >
+                <div>
+                  <p
+                    class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1"
+                  >
+                    Genre
+                  </p>
+                  <p class="text-sm font-medium text-slate-700">
+                    <%= painting.genre %>
+                  </p>
+                </div>
+
+                <div>
+                  <p
+                    class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1"
+                  >
+                    Medium
+                  </p>
+                  <p class="text-sm font-medium text-slate-700">
+                    <%= painting.medium %>
+                  </p>
+                </div>
+
+                <% if (painting.dimensions) { %>
+                <div>
+                  <p
+                    class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1"
+                  >
+                    Dimensions
+                  </p>
+                  <p class="text-sm font-medium text-slate-700">
+                    <%= painting.dimensions %>
+                  </p>
+                </div>
+                <% } %> <% if (painting.location) { %>
+                <div>
+                  <p
+                    class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1"
+                  >
+                    Location
+                  </p>
+                  <p class="text-sm font-medium text-slate-700">
+                    <%= painting.location %>
+                  </p>
+                </div>
+                <% } %> <% if (painting.provenance) { %>
+                <div>
+                  <p
+                    class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1"
+                  >
+                    Provenance
+                  </p>
+                  <p class="text-sm font-medium text-slate-700">
+                    <%= painting.provenance %>
                   </p>
                 </div>
                 <% } %>
-
-                <% if (painting.tags && painting.tags.length > 0) { %>
-                <div class="flex flex-wrap gap-2 mt-4">
-                  <% painting.tags.forEach(function(tag) { %>
-                  <span class="bg-gradient-to-r from-primary-500 to-purple-600 text-white text-xs font-medium px-3 py-1 rounded-full shadow-sm">
-                    <%= tag.trim() %>
-                  </span>
-                  <% }) %>
-                </div>
-                <% } %>
               </div>
+
+              <% if (painting.price) { %>
+              <div
+                class="bg-gradient-to-r from-slate-50 to-slate-100 rounded-2xl p-4 mb-6 border border-slate-200/50 relative overflow-hidden"
+              >
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-emerald-500/5 to-emerald-500/10 rounded-2xl"
+                ></div>
+                <div class="relative">
+                  <div class="text-2xl font-bold text-emerald-600 mb-1">
+                    <%= painting.price %> <%= painting.priceCurrency || '' %>
+                  </div>
+                  <div
+                    class="text-xs text-slate-500 font-semibold uppercase tracking-wider"
+                  >
+                    Market Value
+                  </div>
+                </div>
+              </div>
+              <% } %> <% if (painting.description) { %>
+              <div class="mb-6">
+                <p
+                  class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2"
+                >
+                  Description
+                </p>
+                <p class="text-sm text-slate-600 line-clamp-3">
+                  <%= painting.description %>
+                </p>
+              </div>
+              <% } %> <% if (painting.tags && painting.tags.length > 0) { %>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <% painting.tags.forEach(function(tag) { %>
+                <span
+                  class="bg-gradient-to-r from-primary-500 to-purple-600 text-white text-xs font-medium px-3 py-1 rounded-full shadow-sm"
+                >
+                  <%= tag.trim() %>
+                </span>
+                <% }) %>
+              </div>
+              <% } %>
             </div>
-            <% }) %>
-          <% } %>
+          </div>
+          <% }) %> <% } %>
         </div>
       </div>
     </div>
 
     <script>
-      // Function to fetch all paintings
-      async function fetchAllPaintings() {
-        try {
-          const response = await fetch('http://localhost:5000/api/artworks');
-          const paintings = await response.json();
-          renderPaintings(paintings);
-        } catch (error) {
-          console.error('Error fetching paintings:', error);
-        }
-      }
-
-      // Function to fetch genres from the backend and populate dropdown
-      async function fetchGenres() {
-        try {
-          const response = await fetch('http://localhost:5000/api/artists/genres');
-          const genres = await response.json();
-
-          const genreDropdown = document.getElementById('genreDropdown');
-          genres.forEach(genre => {
-            const option = document.createElement('option');
-            option.value = genre;
-            option.textContent = genre;
-            genreDropdown.appendChild(option);
-          });
-
-          genreDropdown.addEventListener('change', function(e) {
-            const selectedGenre = e.target.value;
-            if (selectedGenre) {
-              fetchPaintingsByGenre(selectedGenre);
-            } else {
-              fetchAllPaintings();
+          // Function to fetch all paintings
+          async function fetchAllPaintings() {
+            try {
+              const response = await fetch("http://localhost:5000/api/artworks");
+              const paintings = await response.json();
+              renderPaintings(paintings);
+            } catch (error) {
+              console.error("Error fetching paintings:", error);
             }
-          });
-        } catch (error) {
-          console.error('Error fetching genres:', error);
-        }
-      }
+          }
 
-      // Function to fetch paintings by genre
-      async function fetchPaintingsByGenre(genre) {
-        try {
-          const response = await fetch(`http://localhost:5000/api/artists/genre/${genre}`);
-          const paintings = await response.json();
-          renderPaintings(paintings);
-        } catch (error) {
-          console.error('Error fetching paintings by genre:', error);
-        }
-      }
+          // Function to fetch genres from the backend and populate dropdown
+          async function fetchGenres() {
+            try {
+              const response = await fetch(
+                "http://localhost:5000/api/artists/genres"
+              );
+              const genres = await response.json();
 
-      // Render paintings in the gallery
-      function renderPaintings(paintings) {
-        const container = document.getElementById('paintingsContainer');
-        container.innerHTML = '';
+              const genreDropdown = document.getElementById("genreDropdown");
+              genres.forEach((genre) => {
+                const option = document.createElement("option");
+                option.value = genre;
+                option.textContent = genre;
+                genreDropdown.appendChild(option);
+              });
 
-        if (!paintings || paintings.length === 0) {
-          container.innerHTML = `<p>No paintings found for this genre.</p>`;
+              genreDropdown.addEventListener("change", function (e) {
+                const selectedGenre = e.target.value;
+                if (selectedGenre) {
+                  fetchPaintingsByGenre(selectedGenre);
+                } else {
+                  fetchAllPaintings();
+                }
+              });
+            } catch (error) {
+              console.error("Error fetching genres:", error);
+            }
+          }
+
+          // Function to fetch paintings by genre
+          async function fetchPaintingsByGenre(genre) {
+            try {
+              const response = await fetch(
+                `http://localhost:5000/api/artists/genre/${genre}`
+              );
+              const paintings = await response.json();
+              renderPaintings(paintings);
+            } catch (error) {
+              console.error("Error fetching paintings by genre:", error);
+            }
+          }
+
+          // Render paintings in the gallery
+          function renderPaintings(paintings) {
+            const container = document.getElementById("paintingsContainer");
+            container.innerHTML = "";
+
+            if (!paintings || paintings.length === 0) {
+              container.innerHTML = `<p>No paintings found for this genre.</p>`;
+              return;
+            }
+
+            paintings.forEach((painting) => {
+              const paintingElement = document.createElement("div");
+              paintingElement.classList.add(
+                "bg-white",
+                "rounded-xl",
+                "shadow-lg",
+                "overflow-hidden",
+                "transform",
+                "hover:scale-105",
+                "transition-transform",
+                "duration-300"
+              );
+              paintingElement.innerHTML = `
+                <img src="${painting.imageUrl}" alt="${painting.title}" class="w-full h-48 object-cover">
+                <div class="p-4">
+                  <h3 class="text-lg font-semibold">${painting.title}</h3>
+                  <p class="text-sm text-slate-500">By ${painting.artist}</p>
+                  <p class="text-md font-semibold text-primary-500">${painting.price}</p>
+                </div>
+              `;
+              container.appendChild(paintingElement);
+            });
+          }
+
+          <!--search logic adding to backend-->
+      const input = document.getElementById('artistSearch');
+      const suggestions = document.getElementById('suggestions');
+
+      let debounceTimer;
+      input.addEventListener('input', function() {
+        clearTimeout(debounceTimer);
+        const value = this.value.trim();
+        if (!value) {
+          suggestions.style.display = 'none';
+          suggestions.innerHTML = '';
           return;
         }
-
-        paintings.forEach(painting => {
-          const paintingElement = document.createElement('div');
-          paintingElement.classList.add('bg-white', 'rounded-xl', 'shadow-lg', 'overflow-hidden', 'transform', 'hover:scale-105', 'transition-transform', 'duration-300');
-          paintingElement.innerHTML = `
-            <img src="${painting.imageUrl}" alt="${painting.title}" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-lg font-semibold">${painting.title}</h3>
-              <p class="text-sm text-slate-500">By ${painting.artist}</p>
-              <p class="text-md font-semibold text-primary-500">${painting.price}</p>
-            </div>
-          `;
-          container.appendChild(paintingElement);
-        });
-      }
-
-async function fetchMediums() {
-  try {
-    const response = await fetch("/api/artists/mediums");  // Remove trailing slash
-    const mediums = await response.json();
-
-    if(mediums && mediums.length > 0){
-      const mediumDropdown = document.getElementById('mediumDropdown');
-      mediums.forEach(medium => {
-        const option = document.createElement('option');
-        option.value = medium;
-        option.textContent = medium;
-        mediumDropdown.appendChild(option);
+        debounceTimer = setTimeout(() => {
+          fetch('/api/artists?search=' + encodeURIComponent(value))
+            .then(res => res.json())
+            .then(data => {
+              if (data.artists && data.artists.length > 0) {
+                suggestions.innerHTML = '';
+                data.artists.forEach(name => {
+                  const li = document.createElement('li');
+                  li.textContent = name;
+                  li.style.cssText = 'padding:10px 18px;cursor:pointer;border-bottom:1px solid #f1f5f9;font-size:1rem;color:#3b3c48;';
+                  li.onclick = () => {
+                    input.value = name;
+                    suggestions.style.display = 'none';
+                    suggestions.innerHTML = '';
+                    // Optional: do something after selection, e.g., fetch paintings by artist!
+                     window.location.href = '/api/artworks/artist/' + encodeURIComponent(name);
+                  };
+                  suggestions.appendChild(li);
+                });
+                suggestions.style.display = 'block';
+              } else {
+                suggestions.innerHTML = '';
+                suggestions.style.display = 'none';
+              }
+            });
+        }, 180);
       });
 
-      mediumDropdown.addEventListener('change', function(e) {
-        const selectedMedium = e.target.value;
-        if (selectedMedium) {
-          fetchPaintingsByMedium(selectedMedium);
-        } else {
-          fetchAllPaintings();
+      // Hide suggestions when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!suggestions.contains(e.target) && e.target !== input) {
+          suggestions.style.display = 'none';
         }
       });
-    }
-  } catch (error) {
-    console.error('Error fetching mediums:', error);
-  }
-}
-
-async function fetchPaintingsByMedium(medium) {
-  try {
-    const response = await fetch(`/api/artists/medium/${medium}`);
-    const paintings = await response.json();
-    
-    // Update this part to handle the direct paintings array
-    renderPaintings(paintings);
-  } catch (error) {
-    console.error('Error fetching paintings by medium:', error);
-  }
-}
 
 
-      // Initialize the page with genres and all paintings
-      document.addEventListener('DOMContentLoaded', function() {
-        fetchGenres();
-        fetchMediums();
-        fetchAllPaintings();  // Display all paintings by default
-      });
+          async function fetchMediums() {
+            try {
+              const response = await fetch("/api/artists/mediums"); // Remove trailing slash
+              const mediums = await response.json();
+
+              if (mediums && mediums.length > 0) {
+                const mediumDropdown = document.getElementById("mediumDropdown");
+                mediums.forEach((medium) => {
+                  const option = document.createElement("option");
+                  option.value = medium;
+                  option.textContent = medium;
+                  mediumDropdown.appendChild(option);
+                });
+
+                mediumDropdown.addEventListener("change", function (e) {
+                  const selectedMedium = e.target.value;
+                  if (selectedMedium) {
+                    fetchPaintingsByMedium(selectedMedium);
+                  } else {
+                    fetchAllPaintings();
+                  }
+                });
+              }
+            } catch (error) {
+              console.error("Error fetching mediums:", error);
+            }
+          }
+
+          async function fetchPaintingsByMedium(medium) {
+            try {
+              const response = await fetch(`/api/artists/medium/${medium}`);
+              const paintings = await response.json();
+
+              // Update this part to handle the direct paintings array
+              renderPaintings(paintings);
+            } catch (error) {
+              console.error("Error fetching paintings by medium:", error);
+            }
+          }
+
+          // Initialize the page with genres and all paintings
+          document.addEventListener("DOMContentLoaded", function () {
+            fetchGenres();
+            fetchMediums();
+            fetchAllPaintings(); // Display all paintings by default
+          });
     </script>
   </body>
 </html>

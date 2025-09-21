@@ -364,50 +364,45 @@
         });
       }
 
-      async function fetchMediums() {
-        try {
-          const response = await fetch("http://localhost:5000/api/artists/mediums/");
-          const data = await response.json();
+async function fetchMediums() {
+  try {
+    const response = await fetch("/api/artists/mediums");  // Remove trailing slash
+    const mediums = await response.json();
 
-          if(data && data.mediums){
-            const mediumDropdown = document.getElementById('mediumDropdown');
-            data.mediums.forEach(medium => {
-              const option = document.createElement('option');
-              option.value = medium;
-              option.textContent = medium;
-              mediumDropdown.appendChild(option);
-            });
+    if(mediums && mediums.length > 0){
+      const mediumDropdown = document.getElementById('mediumDropdown');
+      mediums.forEach(medium => {
+        const option = document.createElement('option');
+        option.value = medium;
+        option.textContent = medium;
+        mediumDropdown.appendChild(option);
+      });
 
-            mediumDropdown.addEventListener('change', function(e) {
-              const selectedMedium = e.target.value;
-              if (selectedMedium) {
-                fetchPaintingsByMedium(selectedMedium);
-              } else {
-                fetchAllPaintings();
-              }
-            });
-          }
-        } catch (error) {
-
-          console.error( 'error fetching mediums' , error);
-          
+      mediumDropdown.addEventListener('change', function(e) {
+        const selectedMedium = e.target.value;
+        if (selectedMedium) {
+          fetchPaintingsByMedium(selectedMedium);
+        } else {
+          fetchAllPaintings();
         }
-        
-      }
+      });
+    }
+  } catch (error) {
+    console.error('Error fetching mediums:', error);
+  }
+}
 
-      async function fetchPaintingsByMedium(medium) {
-        try {
-          const response = await fetch(`http://localhost:5000/api/artists/medium/${medium}`);
-          const data = await response.json();
-
-          if(data && data.paintings){
-            renderPaintings(data.paintings)
-          }
-        } catch (error) {
-          console.error('error getching paintings by medium',error);
-        }
-        
-      }
+async function fetchPaintingsByMedium(medium) {
+  try {
+    const response = await fetch(`/api/artists/medium/${medium}`);
+    const paintings = await response.json();
+    
+    // Update this part to handle the direct paintings array
+    renderPaintings(paintings);
+  } catch (error) {
+    console.error('Error fetching paintings by medium:', error);
+  }
+}
 
 
       // Initialize the page with genres and all paintings

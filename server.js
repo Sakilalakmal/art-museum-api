@@ -4,8 +4,8 @@ const dotenv = require("dotenv");
 const { route } = require("./routes/artAdd_controller");
 const router = require("./routes/artAdd_controller");
 dotenv.config();
-const path = require('path');
-const cors = require('cors');
+const path = require("path");
+const cors = require("cors");
 const artistRouter = require("./routes/artist_controller");
 
 //port
@@ -20,10 +20,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 //server static files
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-
-
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 //connect to mongoDB
 mongoose
@@ -35,10 +33,9 @@ mongoose
     console.log(error);
   });
 
-
 //import routes
-app.use('/api/artworks',router);
-app.use('/api/artists',artistRouter);
+app.use("/api/artworks", router);
+app.use("/api/artists", artistRouter);
 
 //server runn
 
